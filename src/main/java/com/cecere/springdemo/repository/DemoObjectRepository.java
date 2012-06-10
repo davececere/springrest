@@ -1,0 +1,10 @@
+package com.cecere.springdemo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import com.cecere.springdemo.domain.DemoObject;
+
+public interface DemoObjectRepository extends JpaRepository<DemoObject, Long> {
+	
+}

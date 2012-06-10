@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
@@ -20,7 +21,8 @@ import com.cecere.springdemo.domain.DemoObject;
 
 @EnableWebMvc
 @Configuration
-@Import({ControllerConfig.class})
+@Import({ControllerConfig.class,ServiceConfig.class,RepositoryConfig.class})
+@ImportResource( "classpath*:*springDataConfig.xml")
 public class WebConfig extends WebMvcConfigurerAdapter {
 	  private static final Class<?>[] JAXB_CLASSES_TO_BE_BOUND = {DemoObject.class};
 

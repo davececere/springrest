@@ -1,0 +1,1 @@
+create table DemoObject (id bigint not null auto_increment, stringField varchar(255), integerField int, PRIMARY KEY(id));
