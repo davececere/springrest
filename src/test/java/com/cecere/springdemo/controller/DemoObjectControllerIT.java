@@ -2,6 +2,8 @@ package com.cecere.springdemo.controller;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +55,30 @@ public class DemoObjectControllerIT extends AbstractTransactionalJUnit4SpringCon
 		controller.deleteDemoObject(null, ret.getId());
 		ret = controller.getDemoById(null, ret.getId());
 		assertNull(ret);
+	}
+	
+	@Test
+	public void testPages(){
+		int numObjects = 20;
+		//create a bunch of objects
+		for(int i=0; i < numObjects;i++) {
+			DemoObject newObject = new DemoObject();
+			newObject.setIntegerField(i);
+			newObject.setStringField("stringfield"+i);
+
+			//create
+			DemoObject ret = controller.createDemoObject(null, newObject);
+		}
+		
+		//list
+		int pageSize = 5;
+		int pageNum = 2;
+		List<DemoObject> list = controller.getPageDemoObjects(null, pageNum, pageSize);
+		assertNotNull(list);
+		assertEquals(pageSize,list.size());
+		for(int i = 0;i < pageSize; i++){
+			assertEquals(pageNum*pageSize+i,list.get(i).getIntegerField().intValue());
+		}
 	}
 	
 	

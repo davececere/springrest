@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -47,6 +48,16 @@ public class SpringRestDemoController {
 	)
 	public @ResponseBody Iterable<DemoObject> getAllDemoObjects(Locale locale) {
 		return service.findAll();
+	}
+	
+	@ResponseStatus(HttpStatus.OK)
+	@RequestMapping(
+			value = "/demo", 
+			method = RequestMethod.GET,
+			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
+	)
+	public @ResponseBody List<DemoObject> getPageDemoObjects(Locale locale,@RequestParam Integer pageNum, @RequestParam Integer pageSize) {
+		return service.findPageResults(pageNum, pageSize);
 	}
 	
 	@ResponseStatus(HttpStatus.CREATED)

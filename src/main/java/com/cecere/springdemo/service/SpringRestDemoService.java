@@ -10,4 +10,5 @@ public interface SpringRestDemoService {
 	public DemoObject updateDemoObject(DemoObject obj);
 	public void deleteDemoObject(Long id);
 	public Iterable<DemoObject> findAll();
+	public List<DemoObject> findPageResults(int pageNum, int pageSize);
 }
