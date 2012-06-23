@@ -36,11 +36,6 @@ public class DemoObjectControllerIT extends AbstractTransactionalJUnit4SpringCon
 		assertNotNull(ret);
 		assertNotNull(ret.getId());
 		
-		//list
-		Iterable<DemoObject> list = controller.getAllDemoObjects(null);
-		assertNotNull(list);
-		assertTrue(list.iterator().hasNext());
-		
 		//read
 		ret = controller.getDemoById(null, ret.getId());
 		assertNotNull(ret);

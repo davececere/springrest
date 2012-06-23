@@ -39,7 +39,10 @@ public class SpringRestDemoServiceImpl implements SpringRestDemoService{
 	public DemoObject updateDemoObject(DemoObject obj) {
 		if(obj.getId() == null)
 			throw new RuntimeException("id for update must not be null");
-		return repository.save(obj);
+		DemoObject pObj = repository.findOne(obj.getId());
+		pObj.setIntegerField(obj.getIntegerField());
+		pObj.setStringField(obj.getStringField());
+		return repository.save(pObj);
 	}
 
 	@Override

@@ -39,17 +39,6 @@ public class SpringRestDemoController {
 		return service.getDemoObject(id);
 	}
 
-	
-	@ResponseStatus(HttpStatus.OK)
-	@RequestMapping(
-			value = "/demo", 
-			method = RequestMethod.GET,
-			produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
-	)
-	public @ResponseBody Iterable<DemoObject> getAllDemoObjects(Locale locale) {
-		return service.findAll();
-	}
-	
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(
 			value = "/demo", 
