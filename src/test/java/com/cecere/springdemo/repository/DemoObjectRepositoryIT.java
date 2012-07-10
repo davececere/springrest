@@ -12,8 +12,8 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
+import com.cecere.config.RepositoryConfig;
 import com.cecere.springdemo.config.ControllerConfig;
-import com.cecere.springdemo.config.RepositoryConfig;
 import com.cecere.springdemo.config.ServiceConfig;
 import com.cecere.springdemo.domain.DemoObject;
 
