@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.cecere.springdemo.controller.SpringAsyncWebServiceProxyController;
 import com.cecere.springdemo.controller.SpringRestDemoController;
 import com.cecere.springdemo.service.SpringRestDemoService;
 
@@ -16,5 +17,10 @@ public class ControllerConfig {
 	@Bean
 	public SpringRestDemoController getSpringRestDemoController(){
 		return new SpringRestDemoController(springRestDemoService);
+	}
+	
+	@Bean
+	public SpringAsyncWebServiceProxyController getSpringAsyncWebServiceProxyController(){
+	    return new SpringAsyncWebServiceProxyController();
 	}
 }
