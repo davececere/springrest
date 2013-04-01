@@ -23,34 +23,37 @@ import com.ning.http.client.Response;
 
 @Controller
 public class SpringAsyncWebServiceProxyController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(SpringAsyncWebServiceProxyController.class);
-	
-	public SpringAsyncWebServiceProxyController(){
-	}
-	
-	@ResponseStatus(HttpStatus.OK)
-	@RequestMapping(
-			value = "/async/webservicecall", 
-			method = RequestMethod.GET,
-			produces = {MediaType.TEXT_HTML_VALUE}
-	)
-	public @ResponseBody DeferredResult<String> getDemoById() throws IOException {
-	    final DeferredResult<String> deferredResult = new DeferredResult<String>();
-	    AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
-	    asyncHttpClient.prepareGet("http://www.yahoo.com/").execute(new AsyncCompletionHandler<Integer>(){
+    private AsyncHttpClient asyncHttpClient;
+    private static final Logger logger = LoggerFactory.getLogger(SpringAsyncWebServiceProxyController.class);
 
-	        @Override
-	        public Integer onCompleted(Response response) throws Exception{
-	            deferredResult.setResult(response.getResponseBody());
-	            return response.getStatusCode();
-	        }
+    public SpringAsyncWebServiceProxyController(){
+    }
 
-	        @Override
-	        public void onThrowable(Throwable t){
-	            // Something wrong happened.
-	        }
-	    });
-	    return deferredResult;
-	}
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(
+            value = "/async/webservicecall", 
+            method = RequestMethod.GET,
+            produces = {MediaType.TEXT_HTML_VALUE}
+            )
+    public @ResponseBody DeferredResult<String> getDemoById() throws IOException {
+        final DeferredResult<String> deferredResult = new DeferredResult<String>();
+        asyncHttpClient.prepareGet("http://www.yahoo.com/").execute(new AsyncCompletionHandler<Integer>(){
+
+            @Override
+            public Integer onCompleted(Response response) throws Exception{
+                deferredResult.setResult(response.getResponseBody());
+                return response.getStatusCode();
+            }
+
+            @Override
+            public void onThrowable(Throwable t){
+                deferredResult.setErrorResult(t);
+            }
+        });
+        return deferredResult;
+    }
+
+    public void setAsyncHttpClient(AsyncHttpClient asyncHttpClient) {
+        this.asyncHttpClient = asyncHttpClient;
+    }
 }
