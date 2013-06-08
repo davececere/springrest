@@ -1,4 +1,4 @@
-package com.cecere.springdemo.domain;
+package com.davececere.springdemo.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

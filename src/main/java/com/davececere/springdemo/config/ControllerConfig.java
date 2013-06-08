@@ -1,12 +1,12 @@
-package com.cecere.springdemo.config;
+package com.davececere.springdemo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.cecere.springdemo.controller.SpringAsyncWebServiceProxyController;
-import com.cecere.springdemo.controller.SpringRestDemoController;
-import com.cecere.springdemo.service.SpringRestDemoService;
+import com.davececere.springdemo.controller.SpringAsyncWebServiceProxyController;
+import com.davececere.springdemo.controller.SpringRestDemoController;
+import com.davececere.springdemo.service.SpringRestDemoService;
 import com.ning.http.client.AsyncHttpClient;
 
 @Configuration

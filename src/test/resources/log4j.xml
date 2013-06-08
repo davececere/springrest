@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.cecere.springdemo">
+	<logger name="com.davececere.springdemo">
 		<level value="info" />
 	</logger>
 	

@@ -1,4 +1,4 @@
-package com.cecere.springdemo.repository;
+package com.davececere.springdemo.repository;
 
 import static org.junit.Assert.*;
 
@@ -12,10 +12,11 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import com.cecere.config.RepositoryConfig;
-import com.cecere.springdemo.config.ControllerConfig;
-import com.cecere.springdemo.config.ServiceConfig;
-import com.cecere.springdemo.domain.DemoObject;
+import com.davececere.config.RepositoryConfig;
+import com.davececere.springdemo.config.ControllerConfig;
+import com.davececere.springdemo.config.ServiceConfig;
+import com.davececere.springdemo.domain.DemoObject;
+import com.davececere.springdemo.repository.DemoObjectRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ControllerConfig.class,RepositoryConfig.class,ServiceConfig.class }, loader = AnnotationConfigContextLoader.class)

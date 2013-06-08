@@ -1,4 +1,4 @@
-package com.cecere.config;
+package com.davececere.config;
 
 
 import javax.persistence.EntityManager;
@@ -21,8 +21,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.cecere.springdemo.repository.DemoObjectRepository;
-import com.cecere.springdemo.domain.DemoObject;
+import com.davececere.springdemo.domain.DemoObject;
+import com.davececere.springdemo.repository.DemoObjectRepository;
 
 @Configuration
 @EnableTransactionManagement
@@ -42,7 +42,7 @@ public class RepositoryConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
     	LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
     	entityManagerFactory.setDataSource(dataSource());
-    	entityManagerFactory.setPackagesToScan(new String[] { "com.cecere.springdemo.domain" });
+    	entityManagerFactory.setPackagesToScan(new String[] { "com.davececere.springdemo.domain" });
     	entityManagerFactory.setPersistenceProvider(new HibernatePersistence());
     	entityManagerFactory.afterPropertiesSet();
     	return entityManagerFactory;

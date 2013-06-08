@@ -1,13 +1,13 @@
-package com.cecere.springdemo.config;
+package com.davececere.springdemo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.cecere.springdemo.repository.DemoObjectRepository;
-import com.cecere.springdemo.service.SpringRestDemoService;
-import com.cecere.springdemo.service.SpringRestDemoServiceImpl;
+import com.davececere.springdemo.repository.DemoObjectRepository;
+import com.davececere.springdemo.service.SpringRestDemoService;
+import com.davececere.springdemo.service.SpringRestDemoServiceImpl;
 
 @Configuration
 @EnableTransactionManagement

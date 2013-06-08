@@ -1,4 +1,4 @@
-package com.cecere.springdemo.service;
+package com.davececere.springdemo.service;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cecere.springdemo.domain.DemoObject;
-import com.cecere.springdemo.repository.DemoObjectRepository;
+import com.davececere.springdemo.domain.DemoObject;
+import com.davececere.springdemo.repository.DemoObjectRepository;
 
 public class SpringRestDemoServiceImpl implements SpringRestDemoService{
 	

@@ -1,8 +1,8 @@
-package com.cecere.springdemo.service;
+package com.davececere.springdemo.service;
 
 import java.util.List;
 
-import com.cecere.springdemo.domain.DemoObject;
+import com.davececere.springdemo.domain.DemoObject;
 
 public interface SpringRestDemoService {
 	public DemoObject createDemoObject(DemoObject obj);

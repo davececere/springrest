@@ -1,4 +1,4 @@
-package com.cecere.springdemo.controller;
+package com.davececere.springdemo.controller;
 
 import static org.junit.Assert.*;
 
@@ -12,10 +12,11 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import com.cecere.config.RepositoryConfig;
-import com.cecere.springdemo.config.ControllerConfig;
-import com.cecere.springdemo.config.ServiceConfig;
-import com.cecere.springdemo.domain.DemoObject;
+import com.davececere.config.RepositoryConfig;
+import com.davececere.springdemo.config.ControllerConfig;
+import com.davececere.springdemo.config.ServiceConfig;
+import com.davececere.springdemo.controller.SpringRestDemoController;
+import com.davececere.springdemo.domain.DemoObject;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ControllerConfig.class,RepositoryConfig.class,ServiceConfig.class }, loader = AnnotationConfigContextLoader.class)
@@ -72,7 +73,7 @@ public class DemoObjectControllerIT extends AbstractTransactionalJUnit4SpringCon
 		assertNotNull(list);
 		assertEquals(pageSize,list.size());
 		for(int i = 0;i < pageSize; i++){
-			assertEquals(pageNum*pageSize+i,list.get(i).getIntegerField().intValue());
+			assertEquals(pageNum*pageSize+i,list.get(i).getIntegerField().intValue()+1);
 		}
 	}
 	

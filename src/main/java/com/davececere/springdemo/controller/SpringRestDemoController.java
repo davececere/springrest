@@ -1,4 +1,4 @@
-package com.cecere.springdemo.controller;
+package com.davececere.springdemo.controller;
 
 import java.util.List;
 import java.util.Locale;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.cecere.springdemo.domain.DemoObject;
-import com.cecere.springdemo.service.SpringRestDemoService;
+import com.davececere.springdemo.domain.DemoObject;
+import com.davececere.springdemo.service.SpringRestDemoService;
 
 @Controller
 public class SpringRestDemoController {

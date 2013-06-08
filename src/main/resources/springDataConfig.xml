@@ -11,7 +11,7 @@ http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
  <!-- only available to be configured in xml as of spring 3.1 -->
  
-<jpa:repositories base-package="com.cecere.springdemo.repository" />
+<jpa:repositories base-package="com.davececere.springdemo.repository" />
 
 </beans>
 

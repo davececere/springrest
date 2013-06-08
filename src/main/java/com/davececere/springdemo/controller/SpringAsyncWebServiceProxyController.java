@@ -1,4 +1,4 @@
-package com.cecere.springdemo.controller;
+package com.davececere.springdemo.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.async.DeferredResult;
 
-import com.cecere.springdemo.service.SpringRestDemoService;
+import com.davececere.springdemo.service.SpringRestDemoService;
 import com.ning.http.client.AsyncCompletionHandler;
 import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.Response;

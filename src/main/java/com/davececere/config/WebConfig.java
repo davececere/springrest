@@ -1,4 +1,4 @@
-package com.cecere.config;
+package com.davececere.config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.converter.xml.MarshallingHttpMessageConverter;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -17,9 +17,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 
-import com.cecere.springdemo.config.ControllerConfig;
-import com.cecere.springdemo.config.ServiceConfig;
-import com.cecere.springdemo.domain.DemoObject;
+import com.davececere.springdemo.config.ControllerConfig;
+import com.davececere.springdemo.config.ServiceConfig;
+import com.davececere.springdemo.domain.DemoObject;
 
 @EnableWebMvc
 @Configuration
@@ -42,7 +42,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	    converter.setUnmarshaller(m);
 
 	    converters.add(converter);
-	    converters.add(new MappingJacksonHttpMessageConverter());
+	    converters.add(new MappingJackson2HttpMessageConverter());
 
 	    RequestMappingHandlerAdapter adapter = new RequestMappingHandlerAdapter();
 
